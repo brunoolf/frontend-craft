@@ -1,392 +1,58 @@
 ---
-name: ui-ux-pro-max
-description: "UI/UX design-system intelligence - 84 styles, 192 palettes, 74 font pairings, 25 charts, 99 UX guidelines across 22 stacks (searchable dataset + CLI). Internal genjutsu module: loaded by /genjutsu:cast and /genjutsu:paint, not invoked directly."
+name: ui-ux-dataset
+description: Dataset consultavel de referencia de design - 84 estilos visuais, 192 paletas por tipo de produto, 74 pares tipograficos, 1900 fontes Google, 99 diretrizes de UX, presets de motion, escolha de grafico, icones e padroes de landing page, mais guias por stack (React, Next, Tailwind, shadcn, Astro, three.js). Consulte quando precisar de opcoes concretas em volume - paletas, pares de fonte, escolha de grafico, pattern de secao - em vez de inventar do zero.
 ---
 
-# UI/UX Pro Max - Design Intelligence
+# Dataset de UI/UX
 
-Comprehensive design guide for web and mobile applications. Contains 84 styles, 192 color palettes, 74 font pairings, 99 UX guidelines, and 25 chart types across 22 technology stacks. Searchable database with priority-based recommendations.
+Referência tabular consultável. Use quando precisar de **opções concretas em volume**; não substitui julgamento — o `craft-floor` e a direção registrada continuam mandando.
 
-## When to Apply
+O CLI Python original não foi portado. Consulte os CSVs com `Grep` e `Read`, que resolvem o mesmo problema sem dependência de runtime.
 
-Reference these guidelines when:
-- Designing new UI components or pages
-- Choosing color palettes and typography
-- Reviewing code for UX issues
-- Building landing pages or dashboards
-- Implementing accessibility requirements
+## Como consultar
 
-## Rule Categories by Priority
+Os arquivos estão em `data/` relativo a esta skill. Use `Grep` com `output_mode: "content"` e `-i`.
 
-| Priority | Category | Impact | Domain |
-|----------|----------|--------|--------|
-| 1 | Accessibility | CRITICAL | `ux` |
-| 2 | Touch & Interaction | CRITICAL | `ux` |
-| 3 | Performance | HIGH | `ux` |
-| 4 | Layout & Responsive | HIGH | `ux` |
-| 5 | Typography & Color | MEDIUM | `typography`, `color` |
-| 6 | Animation | MEDIUM | `ux` |
-| 7 | Style Selection | MEDIUM | `style`, `product` |
-| 8 | Charts & Data | LOW | `chart` |
-
-## Quick Reference
-
-### 1. Accessibility (CRITICAL)
-
-- `color-contrast` - Minimum 4.5:1 ratio for normal text
-- `focus-states` - Visible focus rings on interactive elements
-- `alt-text` - Descriptive alt text for meaningful images
-- `aria-labels` - aria-label for icon-only buttons
-- `keyboard-nav` - Tab order matches visual order
-- `form-labels` - Use label with for attribute
-
-### 2. Touch & Interaction (CRITICAL)
-
-- `touch-target-size` - Minimum 44x44px touch targets
-- `hover-vs-tap` - Use click/tap for primary interactions
-- `loading-buttons` - Disable button during async operations
-- `error-feedback` - Clear error messages near problem
-- `cursor-pointer` - Add cursor-pointer to clickable elements
-
-### 3. Performance (HIGH)
-
-- `image-optimization` - Use WebP, srcset, lazy loading
-- `reduced-motion` - Check prefers-reduced-motion
-- `content-jumping` - Reserve space for async content
-
-### 4. Layout & Responsive (HIGH)
-
-- `viewport-meta` - width=device-width initial-scale=1
-- `readable-font-size` - Minimum 16px body text on mobile
-- `horizontal-scroll` - Ensure content fits viewport width
-- `z-index-management` - Define z-index scale (10, 20, 30, 50)
-
-### 5. Typography & Color (MEDIUM)
-
-- `line-height` - Use 1.5-1.75 for body text
-- `line-length` - Limit to 65-75 characters per line
-- `font-pairing` - Match heading/body font personalities
-
-### 6. Animation (MEDIUM)
-
-- `duration-timing` - Use 150-300ms for micro-interactions
-- `transform-performance` - Use transform/opacity, not width/height
-- `loading-states` - Skeleton screens or spinners
-
-### 7. Style Selection (MEDIUM)
-
-- `style-match` - Match style to product type
-- `consistency` - Use same style across all pages
-- `no-emoji-icons` - Use SVG icons, not emojis
-
-### 8. Charts & Data (LOW)
-
-- `chart-type` - Match chart type to data type
-- `color-guidance` - Use accessible color palettes
-- `data-table` - Provide table alternative for accessibility
-
-## How to Use
-
-Search specific domains using the CLI tool below.
-
----
-
-## Prerequisites
-
-Requires `python3` (available by default in the Claude Code shell and in claude.ai's code-execution sandbox). This skill does not install anything.
-
----
-
-## How to Use This Skill
-
-When user requests UI/UX work (design, build, create, implement, review, fix, improve), follow this workflow:
-
-**First, enter this skill's directory** so the `scripts/` and `data/` paths below resolve (the working directory persists across the subsequent commands):
-
-```bash
-# Reads run from the skill dir; --persist writes to the project root.
-PROJECT_ROOT="$PWD"
-# Use the base path the orchestrator already resolved, else locate this skill.
-UIUX_DIR="${SKILL_BASE:+$SKILL_BASE/ui-ux-pro-max}"
-[ -d "$UIUX_DIR" ] || UIUX_DIR="$(find "$HOME/.claude/plugins" /mnt/skills -type d -name ui-ux-pro-max 2>/dev/null | sort -V | tail -1)"
-cd "$UIUX_DIR"
+```
+Grep(pattern: "luxury|elegant", path: "data/typography.csv", output_mode: "content", -i: true)
+Grep(pattern: "SaaS", path: "data/colors.csv", output_mode: "content", -i: true)
 ```
 
-### Step 1: Analyze User Requirements
+Arquivos pequenos (até ~200 linhas) podem ser lidos inteiros com `Read`. `google-fonts.csv` tem ~1900 linhas — sempre `Grep` nele.
 
-Extract key information from user request:
-- **Product type**: SaaS, e-commerce, portfolio, dashboard, landing page, etc.
-- **Style keywords**: minimal, playful, professional, elegant, dark mode, etc.
-- **Industry**: healthcare, fintech, gaming, education, etc.
-- **Stack**: React, Vue, Next.js, or default to `html-tailwind`
+## Os arquivos
 
-### Step 2: Generate Design System (REQUIRED)
+| Arquivo | Linhas | O que traz | Busque por |
+|---|---|---|---|
+| `styles.csv` | 84 | Estilos visuais com paleta, efeitos, para que serve e para que **não** serve | nome do estilo, keyword de humor |
+| `colors.csv` | 192 | Paletas completas por tipo de produto, com papéis (primary, surface, muted, border, destructive, ring) e notas de contraste | tipo de produto |
+| `typography.csv` | 74 | Pares de fonte com humor, para que serve, URL do Google Fonts e config Tailwind | humor, categoria |
+| `google-fonts.csv` | ~1900 | Catálogo com classificação, eixos variáveis, subsets e ranking | nome, keyword, classificação |
+| `ux-guidelines.csv` | 99 | Diretrizes com Do, Don't, exemplo bom e ruim, e severidade | categoria, tema |
+| `motion.csv` | 16 | Presets por tier de intensidade, com duração, easing e snippet GSAP | tipo de interação |
+| `ui-reasoning.csv` | 161 | Padrão recomendado por categoria de UI, com regras de decisão e anti-patterns | categoria de produto |
+| `landing.csv` | 34 | Padrões de landing: ordem de seção, posição de CTA, estratégia de cor | keyword de padrão |
+| `charts.csv` | 25 | Escolha de gráfico por tipo de dado, com quando **não** usar e nota de acessibilidade | tipo de dado |
+| `icons.csv` | 104 | Ícones por categoria com biblioteca, import e uso | função do ícone |
+| `products.csv` | 192 | Recomendações por tipo de produto: estilo, padrão de landing, foco de paleta | tipo de produto |
+| `react-performance.csv` | 44 | Armadilhas de performance em React/Next com correção | sintoma |
+| `app-interface.csv` | 29 | Diretrizes de interface de app | categoria |
+| `stacks/*.csv` | — | Guias por stack: react, nextjs, html-tailwind, shadcn, astro, threejs | tema |
 
-**Always start with `--design-system`** to get comprehensive recommendations with reasoning:
+Os stacks fora do alvo deste plugin (Flutter, WPF, SwiftUI, Compose, Angular, Vue) foram removidos.
 
-```bash
-python3 scripts/search.py "<product_type> <industry> <keywords>" --design-system [-p "Project Name"]
-```
+## Como usar bem
 
-This command:
-1. Searches 5 domains in parallel (product, style, color, landing, typography)
-2. Applies reasoning rules from `ui-reasoning.csv` to select best matches
-3. Returns complete design system: pattern, style, colors, typography, effects
-4. Includes anti-patterns to avoid
+**Como ponto de partida, não como resposta.** Uma paleta do dataset é um começo defensável, não a decisão. A direção registrada em `DESIGN.md` vence sempre.
 
-**Example:**
-```bash
-python3 scripts/search.py "beauty spa wellness service" --design-system -p "Serenity Spa"
-```
+**Duas ou três consultas, não dez.** O dataset é grande o bastante para virar procrastinação. Consulte o que resolve a decisão em aberto e siga.
 
-### Step 2b: Persist Design System (Master + Overrides Pattern)
+**Cruze quando útil.** `products.csv` diz o estilo recomendado para o tipo de produto; `styles.csv` detalha esse estilo; `colors.csv` dá a paleta; `typography.csv` o par de fontes. É a sequência natural para uma direção nova.
 
-To save the design system for **hierarchical retrieval across sessions**, add `--persist` (point `--output-dir` at the project root so files land there, not in the skill dir):
+**A coluna "Do Not Use For" é a mais valiosa** em `styles.csv` e `charts.csv`. Saber o que um estilo estraga vale mais que saber o que ele enfeita.
 
-```bash
-python3 scripts/search.py "<query>" --design-system --persist -p "Project Name" --output-dir "$PROJECT_ROOT"
-```
+## Cuidados
 
-This creates:
-- `design-system/<project-slug>/MASTER.md` — Global Source of Truth with all design rules
-- `design-system/<project-slug>/pages/` — Folder for page-specific overrides
-
-`--persist` skips writing if `MASTER.md` already exists; add `--force` to overwrite.
-
-**With page-specific override:**
-```bash
-python3 scripts/search.py "<query>" --design-system --persist -p "Project Name" --page "dashboard" --output-dir "$PROJECT_ROOT"
-```
-
-This also creates:
-- `design-system/<project-slug>/pages/dashboard.md` — Page-specific deviations from Master
-
-**How hierarchical retrieval works:**
-1. When building a specific page (e.g., "Checkout"), first check `design-system/<project-slug>/pages/checkout.md`
-2. If the page file exists, its rules **override** the Master file
-3. If not, use `design-system/<project-slug>/MASTER.md` exclusively
-
-**Context-aware retrieval prompt:**
-```
-I am building the [Page Name] page. Please read design-system/MASTER.md.
-Also check if design-system/pages/[page-name].md exists.
-If the page file exists, prioritize its rules.
-If not, use the Master rules exclusively.
-Now, generate the code...
-```
-
-### Step 3: Supplement with Detailed Searches (as needed)
-
-After getting the design system, use domain searches to get additional details:
-
-```bash
-python3 scripts/search.py "<keyword>" --domain <domain> [-n <max_results>]
-```
-
-**When to use detailed searches:**
-
-| Need | Domain | Example |
-|------|--------|---------|
-| More style options | `style` | `--domain style "glassmorphism dark"` |
-| Chart recommendations | `chart` | `--domain chart "real-time dashboard"` |
-| UX best practices | `ux` | `--domain ux "animation accessibility"` |
-| Alternative fonts | `typography` | `--domain typography "elegant luxury"` |
-| Landing structure | `landing` | `--domain landing "hero social-proof"` |
-
-### Step 4: Stack Guidelines (Default: html-tailwind)
-
-Get implementation-specific best practices. If user doesn't specify a stack, **default to `html-tailwind`**.
-
-```bash
-python3 scripts/search.py "<keyword>" --stack html-tailwind
-```
-
-Available stacks: `html-tailwind`, `react`, `nextjs`, `astro`, `vue`, `nuxtjs`, `nuxt-ui`, `svelte`, `swiftui`, `react-native`, `flutter`, `shadcn`, `jetpack-compose`, `threejs`, `angular`, `laravel`, `javafx`, `wpf`, `winui`, `avalonia`, `uno`, `uwp`
-
----
-
-## Search Reference
-
-### Available Domains
-
-| Domain | Use For | Example Keywords |
-|--------|---------|------------------|
-| `product` | Product type recommendations | SaaS, e-commerce, portfolio, healthcare, beauty, service |
-| `style` | UI styles, colors, effects | glassmorphism, minimalism, dark mode, brutalism |
-| `typography` | Font pairings, Google Fonts | elegant, playful, professional, modern |
-| `color` | Color palettes (full token sets) | saas, ecommerce, healthcare, beauty, fintech, service |
-| `landing` | Page structure, CTA strategies | hero, hero-centric, testimonial, pricing, social-proof |
-| `chart` | Chart types, library recommendations | trend, comparison, timeline, funnel, pie |
-| `ux` | Best practices, anti-patterns | animation, accessibility, z-index, loading |
-| `icons` | Icon set + import guidance | outline, solid, brand, navigation |
-| `react` | React/Next.js performance | waterfall, bundle, suspense, memo, rerender, cache |
-| `web` | App/web interface guidelines | aria, focus, keyboard, semantic, virtualize |
-| `gsap` | Motion snippets (feeds the `--motion` dial) | reveal, parallax, stagger, scroll |
-| `google-fonts` | Google Fonts lookup | serif, mono, display, variable |
-
-### Available Stacks
-
-| Stack | Focus |
-|-------|-------|
-| `html-tailwind` | Tailwind utilities, responsive, a11y (DEFAULT) |
-| `react` | State, hooks, performance, patterns |
-| `nextjs` | SSR, routing, images, API routes |
-| `astro` | Islands architecture, partial hydration, content-driven |
-| `vue` | Composition API, Pinia, Vue Router |
-| `nuxtjs` | Nuxt 3, composables, SSR/SSG, auto-imports |
-| `nuxt-ui` | Nuxt UI components, theming, forms |
-| `svelte` | Runes, stores, SvelteKit |
-| `swiftui` | Views, State, Navigation, Animation |
-| `react-native` | Components, Navigation, Lists |
-| `flutter` | Widgets, State, Layout, Theming |
-| `shadcn` | shadcn/ui components, theming, forms, patterns |
-| `jetpack-compose` | Composables, Modifiers, State Hoisting, Recomposition |
-| `threejs` | Three.js scenes, materials, R3F patterns |
-| `angular` | Components, signals, RxJS, standalone APIs |
-| `laravel` | Blade, Livewire, Tailwind, form patterns |
-| `javafx` | Scene graph, FXML, CSS, controls |
-| `wpf` | XAML, MVVM, bindings, styles |
-| `winui` | WinUI 3, XAML, Fluent, bindings |
-| `avalonia` | Cross-platform XAML, MVVM, styling |
-| `uno` | Uno Platform, WinUI XAML cross-target |
-| `uwp` | UWP XAML, Fluent, adaptive UI |
-
----
-
-## Example Workflow
-
-**User request:** "Build a landing page for a professional skincare service"
-
-### Step 1: Analyze Requirements
-- Product type: Beauty/Spa service
-- Style keywords: elegant, professional, soft
-- Industry: Beauty/Wellness
-- Stack: html-tailwind (default)
-
-### Step 2: Generate Design System (REQUIRED)
-
-```bash
-python3 scripts/search.py "beauty spa wellness service elegant" --design-system -p "Serenity Spa"
-```
-
-**Output:** Complete design system with pattern, style, colors, typography, effects, and anti-patterns.
-
-### Step 3: Supplement with Detailed Searches (as needed)
-
-```bash
-# Get UX guidelines for animation and accessibility
-python3 scripts/search.py "animation accessibility" --domain ux
-
-# Get alternative typography options if needed
-python3 scripts/search.py "elegant luxury serif" --domain typography
-```
-
-### Step 4: Stack Guidelines
-
-```bash
-python3 scripts/search.py "layout responsive form" --stack html-tailwind
-```
-
-**Then:** Synthesize design system + detailed searches and implement the design.
-
----
-
-## Output Formats
-
-The `--design-system` flag supports two output formats:
-
-```bash
-# ASCII box (default) - best for terminal display
-python3 scripts/search.py "fintech crypto" --design-system
-
-# Markdown - best for documentation
-python3 scripts/search.py "fintech crypto" --design-system -f markdown
-```
-
----
-
-## Tips for Better Results
-
-1. **Be specific with keywords** - "healthcare SaaS dashboard" > "app"
-2. **Search multiple times** - Different keywords reveal different insights
-3. **Combine domains** - Style + Typography + Color = Complete design system
-4. **Always check UX** - Search "animation", "z-index", "accessibility" for common issues
-5. **Use stack flag** - Get implementation-specific best practices
-6. **Iterate** - If first search doesn't match, try different keywords
-
----
-
-## Common Rules for Professional UI
-
-These are frequently overlooked issues that make UI look unprofessional:
-
-### Icons & Visual Elements
-
-| Rule | Do | Don't |
-|------|----|----- |
-| **No emoji icons** | Use SVG icons (Heroicons, Lucide, Simple Icons) | Use emojis like 🎨 🚀 ⚙️ as UI icons |
-| **Stable hover states** | Use color/opacity transitions on hover | Use scale transforms that shift layout |
-| **Correct brand logos** | Research official SVG from Simple Icons | Guess or use incorrect logo paths |
-| **Consistent icon sizing** | Use fixed viewBox (24x24) with w-6 h-6 | Mix different icon sizes randomly |
-
-### Interaction & Cursor
-
-| Rule | Do | Don't |
-|------|----|----- |
-| **Cursor pointer** | Add `cursor-pointer` to all clickable/hoverable cards | Leave default cursor on interactive elements |
-| **Hover feedback** | Provide visual feedback (color, shadow, border) | No indication element is interactive |
-| **Smooth transitions** | Use `transition-colors duration-200` | Instant state changes or too slow (>500ms) |
-
-### Light/Dark Mode Contrast
-
-| Rule | Do | Don't |
-|------|----|----- |
-| **Glass card light mode** | Use `bg-white/80` or higher opacity | Use `bg-white/10` (too transparent) |
-| **Text contrast light** | Use `#0F172A` (slate-900) for text | Use `#94A3B8` (slate-400) for body text |
-| **Muted text light** | Use `#475569` (slate-600) minimum | Use gray-400 or lighter |
-| **Border visibility** | Use `border-gray-200` in light mode | Use `border-white/10` (invisible) |
-
-### Layout & Spacing
-
-| Rule | Do | Don't |
-|------|----|----- |
-| **Floating navbar** | Add `top-4 left-4 right-4` spacing | Stick navbar to `top-0 left-0 right-0` |
-| **Content padding** | Account for fixed navbar height | Let content hide behind fixed elements |
-| **Consistent max-width** | Use same `max-w-6xl` or `max-w-7xl` | Mix different container widths |
-
----
-
-## Pre-Delivery Checklist
-
-Before delivering UI code, verify these items:
-
-### Visual Quality
-- [ ] No emojis used as icons (use SVG instead)
-- [ ] All icons from consistent icon set (Heroicons/Lucide)
-- [ ] Brand logos are correct (verified from Simple Icons)
-- [ ] Hover states don't cause layout shift
-- [ ] Use theme colors directly (bg-primary) not var() wrapper
-
-### Interaction
-- [ ] All clickable elements have `cursor-pointer`
-- [ ] Hover states provide clear visual feedback
-- [ ] Transitions are smooth (150-300ms)
-- [ ] Focus states visible for keyboard navigation
-
-### Light/Dark Mode
-- [ ] Light mode text has sufficient contrast (4.5:1 minimum)
-- [ ] Glass/transparent elements visible in light mode
-- [ ] Borders visible in both modes
-- [ ] Test both modes before delivery
-
-### Layout
-- [ ] Floating elements have proper spacing from edges
-- [ ] No content hidden behind fixed navbars
-- [ ] Responsive at 375px, 768px, 1024px, 1440px
-- [ ] No horizontal scroll on mobile
-
-### Accessibility
-- [ ] All images have alt text
-- [ ] Form inputs have labels
-- [ ] Color is not the only indicator
-- [ ] `prefers-reduced-motion` respected
+- As paletas trazem notas de contraste, mas **verifique os pares que você de fato usar**. A nota cobre a combinação prevista, não a sua.
+- `typography.csv` sugere Inter em vários pares. Isso é um default razoável, não uma escolha — se você não sabe dizer por que Inter serve este produto, veja `art-direction`.
+- Os snippets de motion em `motion.csv` usam sintaxe GSAP. Para a decisão de *se* e *quanto* animar, `motion-principles` manda.
