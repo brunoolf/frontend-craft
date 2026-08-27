@@ -7,7 +7,13 @@ Curado a partir de [nove projetos de código aberto](NOTICE.md), com as contradi
 ## Instalação
 
 ```bash
-/plugin marketplace add brunoo_lf/frontend-craft
+/plugin marketplace add brunoolf/frontend-craft
+```
+
+Ou, para usar direto deste diretório sem publicar:
+
+```bash
+/plugin marketplace add D:/Bruno/Documentos/GitHub/frontend-craft
 ```
 
 Depois `/plugin install frontend-craft`. Sem dependências: nenhum Node, nenhum Python, nenhum binário.
