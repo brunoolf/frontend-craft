@@ -10,13 +10,11 @@ Curado a partir de [nove projetos de código aberto](NOTICE.md), com as contradi
 /plugin marketplace add brunoolf/frontend-craft
 ```
 
-Ou, para usar direto deste diretório sem publicar:
+Depois:
 
 ```bash
-/plugin marketplace add D:/Bruno/Documentos/GitHub/frontend-craft
+/plugin install frontend-craft
 ```
-
-Depois `/plugin install frontend-craft`. Sem dependências: nenhum Node, nenhum Python, nenhum binário.
 
 ## Como funciona
 
