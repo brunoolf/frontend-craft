@@ -1,11 +1,29 @@
 {
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "frontend-craft",
-  "owner": { "name": "brunoo_lf" },
+  "description": "Sistema unificado de design frontend para Claude Code: 7 agentes especializados com roteamento automatico e 40 skills curadas.",
+  "owner": {
+    "name": "brunoolf",
+    "url": "https://github.com/brunoolf"
+  },
+  "metadata": {
+    "description": "Design frontend completo: direcao visual, design system, UX, motion, 3D/WebGL, responsividade, implementacao, critica e auditoria.",
+    "version": "1.0.0"
+  },
   "plugins": [
     {
       "name": "frontend-craft",
+      "description": "7 agentes de design frontend com roteamento automatico e 40 skills curadas. Web, React/Next, 3D/WebGL, scroll experiences, responsividade e acessibilidade.",
+      "version": "1.0.0",
       "source": "./",
-      "description": "Sistema unificado de design frontend: 7 agentes com roteamento automatico, 39 skills curadas."
+      "category": "design",
+      "author": {
+        "name": "brunoolf"
+      },
+      "homepage": "https://github.com/brunoolf/frontend-craft",
+      "repository": "https://github.com/brunoolf/frontend-craft",
+      "license": "MIT",
+      "tags": ["design", "frontend", "ui", "ux", "motion", "animation", "threejs", "responsive", "accessibility", "design-system"]
     }
   ]
 }
