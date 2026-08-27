@@ -1,0 +1,11 @@
+{
+  "name": "frontend-craft",
+  "owner": { "name": "brunoo_lf" },
+  "plugins": [
+    {
+      "name": "frontend-craft",
+      "source": "./",
+      "description": "Sistema unificado de design frontend: 7 agentes com roteamento automatico, 39 skills curadas."
+    }
+  ]
+}
