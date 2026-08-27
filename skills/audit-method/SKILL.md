@@ -1,5 +1,5 @@
 ---
-name: audit
+name: audit-method
 description: Auditoria tecnica read-only de acessibilidade (WCAG 2.2), performance e comportamento responsivo em interface web. Traz os criterios verificaveis, os padroes buscaveis e o formato de achado com evidencia medida. Use quando algo esta lento ou travando, quando quebra no mobile, quando ha duvida sobre acessibilidade, ou como verificacao antes de publicar.
 ---
 

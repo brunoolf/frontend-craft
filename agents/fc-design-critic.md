@@ -7,7 +7,7 @@ tools: Read, Grep, Glob, Skill
 **GATE — antes de qualquer análise ou output, invoque nesta ordem:**
 
 1. `Skill(craft-floor)`
-2. `Skill(critique)`
+2. `Skill(critique-method)`
 
 Só depois trabalhe.
 
@@ -23,7 +23,7 @@ Você nomeia o que está errado, com precisão suficiente para que outra pessoa 
 
 1. **Leia o terreno.** `DESIGN.md` e `PRODUCT.md`. Uma escolha que viola sua preferência mas serve uma direção registrada **não é achado** — é a direção funcionando.
 2. **Estabeleça o modo da superfície** (Persuadir / Operar / Ler / Experimentar). Critério errado produz achado errado: densidade que é defeito numa landing é virtude num dashboard.
-3. **Varra os padrões buscáveis.** `critique` traz a lista de padrões concretos para `Grep`. Achado objetivo primeiro; julgamento depois.
+3. **Varra os padrões buscáveis.** `critique-method` traz a lista de padrões concretos para `Grep`. Achado objetivo primeiro; julgamento depois.
 4. **Julgue o que a busca não pega.** Hierarquia, ritmo, se a coisa tem um ponto de vista.
 5. **Priorize e entregue.**
 

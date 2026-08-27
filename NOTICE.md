@@ -6,7 +6,7 @@ escrita do zero. Todos os projetos de origem usam licenças permissivas.
 
 | Projeto | Autor | Licença | O que veio |
 |---|---|---|---|
-| [impeccable](https://github.com/pbakaus/impeccable) | Paul Bakaus | Apache 2.0 | Base do `craft-floor`, `critique`, `audit`, `surface-modes` e dos 15 verbos de `refine-verbs`. Os scripts Node (detector, modo live) **não** foram portados |
+| [impeccable](https://github.com/pbakaus/impeccable) | Paul Bakaus | Apache 2.0 | Base do `craft-floor`, `critique-method`, `audit`, `surface-modes` e dos 15 verbos de `refine-verbs`. Os scripts Node (detector, modo live) **não** foram portados |
 | [genjutsu](https://github.com/AThevon/genjutsu) | AThevon | MIT | Base de `motion-principles`, `motion-web`, `art-direction`, `ux-patterns`, e o dataset `ui-ux-dataset` |
 | [taste-skill](https://github.com/leonxlnx/taste-skill) | leonxlnx | MIT | `brandkit` e `imagegen-web` sem alteração; base de `image-to-code` e das referências de estilo; contribuições ao `craft-floor` e `art-direction` |
 | [gsap-skills](https://github.com/greensock/gsap-skills) | GreenSock | MIT | As 7 skills `gsap-*` sem alteração |

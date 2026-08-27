@@ -7,7 +7,7 @@ description: Projetar interface responsiva desde o inicio - estrategia de breakp
 
 Carregue ao **construir**, não só ao consertar. Layout responsivo pensado no fim vira uma pilha de breakpoints remendando decisões que nasceram fixas.
 
-Para *detectar* o que já quebrou, veja `audit`. Para *corrigir* uma superfície existente, o verbo `adapt` em `refine-verbs`. Esta skill é sobre nascer certo.
+Para *detectar* o que já quebrou, veja `audit-method`. Para *corrigir* uma superfície existente, o verbo `adapt` em `refine-verbs`. Esta skill é sobre nascer certo.
 
 ## A mudança de mentalidade
 

@@ -7,7 +7,7 @@ tools: Read, Grep, Glob, Skill, Bash
 **GATE — antes de qualquer análise ou output, invoque nesta ordem:**
 
 1. `Skill(craft-floor)`
-2. `Skill(audit)`
+2. `Skill(audit-method)`
 
 Só depois trabalhe.
 

@@ -1,5 +1,5 @@
 ---
-name: critique
+name: critique-method
 description: Critica de design read-only com heuristica, scoring e caca a padroes genericos de IA. Traz a lista de padroes buscaveis via Grep para achado objetivo antes de julgamento subjetivo. Use quando o pedido e vago sobre o que esta errado - "melhora isso", "parece feito por IA", "ta generico" - ou como revisao antes de publicar.
 ---
 

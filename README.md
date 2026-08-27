@@ -85,7 +85,7 @@ A seção de razões é o que mais importa. Sem ela, a próxima sessão reabre d
 
 **Implementação** — `implementation`, `responsive`, `image-to-code`, `pick-ui-library`, `refine-verbs`
 
-**Avaliação** — `critique`, `audit`
+**Avaliação** — `critique-method`, `audit-method`
 
 **Extra** — `frontend-slides`
 
