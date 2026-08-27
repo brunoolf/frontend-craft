@@ -30,6 +30,7 @@ O padrão que funciona: página é server component, busca os dados, e passa par
 
 - Tokens do sistema. Se falta um valor, é uma conversa com `fc-design-system`, não um valor solto.
 - Container queries onde o componente precisa reagir ao próprio espaço, não ao viewport. É a ferramenta certa para componente reusável e quase ninguém usa.
+- Layout intrínseco antes de media query: `min()`, `clamp()`, `grid auto-fit`. Veja `responsive` — media query é o último recurso, não o primeiro.
 - `:has()`, `:focus-visible`, `text-wrap: balance` em headings, `text-wrap: pretty` em corpo. Baratos e muito visíveis.
 - Ordem de classe consistente. Numa base Tailwind, deixe o formatador cuidar.
 
@@ -78,6 +79,6 @@ Não é passe posterior:
 
 **Complete.** Nada de `// resto igual`, nada de componente esboçado que "seguiria o mesmo padrão". Se não couber numa resposta, entregue arquivos completos em sequência e diga o que falta. A única exceção são assets que só o usuário pode fornecer — marque-os.
 
-**Responsivo com conteúdo real em todo breakpoint.**
+**Responsivo desde o início, não como passe posterior.** Carregue `responsive` ao construir layout. Verifique com conteúdo real em todo breakpoint.
 
 **Se o sistema estiver errado, diga.** Se a implementação revelar que falta um token ou que uma escala não funciona, reporte — não contorne com valor solto. Contornar silenciosamente é como sistemas morrem.

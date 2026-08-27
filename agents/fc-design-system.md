@@ -9,7 +9,7 @@ tools: Read, Grep, Glob, Write, Edit, Skill
 1. `Skill(craft-floor)`
 2. `Skill(design-system)`
 
-Só depois trabalhe. Se o pedido é extrair a direção de uma referência visual ou de um site existente, invoque também `Skill(design-dna)`.
+Só depois trabalhe. Se o pedido é extrair a direção de uma referência visual ou de um site existente, invoque também `Skill(design-dna)`. Se envolve como as escalas se comportam entre tamanhos de tela, `Skill(responsive)`.
 
 ---
 

@@ -1,6 +1,6 @@
 # frontend-craft
 
-Um plugin de design frontend para Claude Code. Sete agentes especializados, 39 skills curadas, e roteamento automático — você descreve o problema em português normal e o agente certo assume.
+Um plugin de design frontend para Claude Code. Sete agentes especializados, 40 skills curadas, e roteamento automático — você descreve o problema em português normal e o agente certo assume.
 
 Curado a partir de [nove projetos de código aberto](NOTICE.md), com as contradições entre eles resolvidas.
 
@@ -26,6 +26,7 @@ Você não precisa saber os nomes dos agentes. Descreva o problema:
 > "faz uma landing page pro meu produto"
 > "parece feito por IA"
 > "o scroll trava no celular"
+> "faz isso funcionar em qualquer tamanho de tela"
 > "quero uma cena 3D de fundo enquanto rola"
 
 A skill roteadora dispara, lê o projeto e despacha. Pedidos vagos passam primeiro pelo crítico — diagnóstico antes de tratamento.
@@ -70,7 +71,7 @@ Dois arquivos na raiz do **seu** projeto:
 
 A seção de razões é o que mais importa. Sem ela, a próxima sessão reabre discussões já resolvidas e o projeto vira a média de três direções incompatíveis.
 
-## As 39 skills
+## As 40 skills
 
 **Fundação** — `frontend-craft` (roteador), `craft-floor`
 
@@ -84,7 +85,7 @@ A seção de razões é o que mais importa. Sem ela, a próxima sessão reabre d
 
 **3D** — as 10 skills `threejs-*`
 
-**Implementação** — `implementation`, `image-to-code`, `pick-ui-library`, `refine-verbs`
+**Implementação** — `implementation`, `responsive`, `image-to-code`, `pick-ui-library`, `refine-verbs`
 
 **Avaliação** — `critique`, `audit`
 

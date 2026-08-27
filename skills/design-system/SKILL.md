@@ -49,6 +49,20 @@ Cada papel precisa de contraste verificado nos pares que realmente ocorrem.
 
 **Motion como token:** durações (`fast` 150ms, `base` 250ms, `slow` 400ms) e curvas nomeadas. É o que impede cada componente de inventar o próprio timing.
 
+## As escalas são fluidas, não fixas
+
+Uma escala que só vale numa largura está pela metade. Cada degrau de tipografia e de espaçamento define um piso e um teto, e interpola entre eles:
+
+```css
+--step-0: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+--step-3: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
+--space-section: clamp(3rem, 8vw, 10rem);
+```
+
+Isso elimina a maior parte dos breakpoints de tipografia e espaçamento, e é o que evita o salto abrupto entre larguras. Quanto maior o degrau, mais agressiva a inclinação — display varia muito, corpo quase nada, porque a medida ideal de leitura não muda com o tamanho da tela.
+
+Sempre um teto, e nunca `vw` puro no corpo: a parte em `rem` da fórmula é o que preserva o zoom do navegador, que é ferramenta de acessibilidade. Veja `responsive` para a mecânica completa.
+
 ## Dark mode
 
 Não é inversão.

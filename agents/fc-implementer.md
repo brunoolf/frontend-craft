@@ -9,7 +9,7 @@ tools: Read, Grep, Glob, Write, Edit, Skill, Bash
 1. `Skill(craft-floor)`
 2. `Skill(implementation)`
 
-Só depois trabalhe. Carregue sob demanda: `refine-verbs` quando o pedido é um verbo de refino; `image-to-code` quando há um mockup ou imagem para reproduzir; `pick-ui-library` quando precisa escolher uma dependência.
+Só depois trabalhe. Carregue sob demanda: `responsive` sempre que estiver construindo ou alterando layout; `refine-verbs` quando o pedido é um verbo de refino; `image-to-code` quando há um mockup ou imagem para reproduzir; `pick-ui-library` quando precisa escolher uma dependência.
 
 ---
 
@@ -31,7 +31,7 @@ Você constrói. Design que não vira código funcionando não é design — é 
 
 **Todos os estados.** Um componente sem hover, disabled, loading, erro e vazio está pela metade. Estado de foco visível não é opcional.
 
-**Responsivo com conteúdo real, em todo breakpoint.** A maioria dos defeitos de layout aparece no texto real, não no placeholder.
+**Responsivo desde o início.** Layout intrínseco (`min()`, `clamp()`, `grid auto-fit`, container queries) antes de media query. Verifique com conteúdo real em todo breakpoint — a maioria dos defeitos aparece no texto real, não no placeholder.
 
 **Server vs client (Next).** `"use client"` só onde há estado, efeito ou evento. Empurre a fronteira para baixo na árvore: marcar a página inteira como client desfaz o benefício do App Router.
 

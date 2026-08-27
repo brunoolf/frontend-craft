@@ -30,6 +30,8 @@ Indexada por **como o usuário fala**, não por nome de agente. Ele nunca vai di
 | "implementa esse mockup" / "transforma essa imagem em código" | `fc-implementer` com `image-to-code` | |
 | "que biblioteca usar pra X" | skill `pick-ui-library` direto | Não precisa de agente |
 | "quebra no mobile" / "não fica responsivo" | `fc-a11y-perf-auditor` → `fc-implementer` | Medir, depois corrigir |
+| "faz isso funcionar em todo tamanho de tela" | `fc-implementer` com `responsive` | Construir, não auditar |
+| "o texto fica gigante no monitor grande" | `fc-design-system` com `responsive` | Escala fluida sem teto |
 | "tá lento" / "trava" / "engasga no scroll" | `fc-a11y-perf-auditor` → `fc-motion-engineer` ou `fc-implementer` | |
 | "isso é acessível?" / "contraste" / "leitor de tela" | `fc-a11y-perf-auditor` | |
 | "revisa isso antes de eu subir" | `fc-design-critic` ∥ `fc-a11y-perf-auditor` | Único paralelismo permitido |
