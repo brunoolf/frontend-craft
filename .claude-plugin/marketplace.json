@@ -8,13 +8,13 @@
   },
   "metadata": {
     "description": "Design frontend completo: direcao visual, design system, UX, motion, 3D/WebGL, responsividade, implementacao, critica e auditoria.",
-    "version": "1.0.0"
+    "version": "1.0.1"
   },
   "plugins": [
     {
       "name": "frontend-craft",
       "description": "7 agentes de design frontend com roteamento automatico e 40 skills curadas. Web, React/Next, 3D/WebGL, scroll experiences, responsividade e acessibilidade.",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": "./",
       "category": "design",
       "author": {
@@ -23,7 +23,18 @@
       "homepage": "https://github.com/brunoolf/frontend-craft",
       "repository": "https://github.com/brunoolf/frontend-craft",
       "license": "MIT",
-      "tags": ["design", "frontend", "ui", "ux", "motion", "animation", "threejs", "responsive", "accessibility", "design-system"]
+      "tags": [
+        "design",
+        "frontend",
+        "ui",
+        "ux",
+        "motion",
+        "animation",
+        "threejs",
+        "responsive",
+        "accessibility",
+        "design-system"
+      ]
     }
   ]
 }

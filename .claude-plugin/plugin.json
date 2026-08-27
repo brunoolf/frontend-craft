@@ -1,7 +1,7 @@
 {
   "name": "frontend-craft",
   "description": "Design frontend completo: 7 agentes especializados (direcao visual, design system, UX, motion, implementacao, critica e auditoria) com roteamento automatico. Web, React/Next, 3D/WebGL e scroll experiences.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "brunoo_lf"
   },
