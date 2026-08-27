@@ -11,6 +11,7 @@ docs/
 .remember/
 .claude/
 .impeccable/
+.gitignore
 
 # Sistema
 node_modules/
